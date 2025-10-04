@@ -42,10 +42,10 @@ cd nextjsflaskapidocker
 ```
 -ใช้งาน ansible
 
-```
+<!-- ```
 ansible-playbook docker-install.yml
 
-```
+``` -->
 -แก้ไข .env 
 ```
 nano .env
