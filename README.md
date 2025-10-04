@@ -26,6 +26,30 @@ Troubleshooting
 
 - Database persistence is in a named volume `db-data`.
 
+- คำสั่ง ลง ansible
+```bash
+sudo apt update
+sudo apt install software-properties-common -y
+sudo add-apt-repository --yes --update ppa:ansible/ansible
+sudo apt install ansible -y
+
+```
+-คำสั่ง clone และเข้าไปยัง folder ของ repository
+```bash
+git clone https://github.com/nutthapong224/nextjsflaskapidocker.git 
+cd nextjsflaskapidocker
+
+```
+-ใช้งาน ansible
+
+```
+ansible-playbook install-docker.yml
+
+```
+-แก้ไข .env 
+```
+nano .env
+```
 Environment notes
 
 - The frontend reads `NEXT_PUBLIC_API_URL` to locate the backend. When running with Docker Compose the value is set to `http://backend:5000` so the frontend can call the backend by service name.
