@@ -43,7 +43,7 @@ cd nextjsflaskapidocker
 -ใช้งาน ansible
 
 ```
-ansible-playbook install-docker.yml
+ansible-playbook docker-install.yml
 
 ```
 -แก้ไข .env 
