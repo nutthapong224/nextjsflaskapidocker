@@ -21,4 +21,3 @@ frontend/.env.production.local
 # System files
 .DS_Store
 *.log
-.env
