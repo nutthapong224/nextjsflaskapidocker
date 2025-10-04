@@ -26,12 +26,23 @@ Troubleshooting
 
 - Database persistence is in a named volume `db-data`.
 
-- คำสั่ง ลง ansible
-```bash
+- คำสั่ง ลง docker
+<!-- ```bash
 sudo apt update
 sudo apt install software-properties-common -y
 sudo add-apt-repository --yes --update ppa:ansible/ansible
 sudo apt install ansible -y
+
+``` -->
+```
+sudo apt update
+sudo apt install -y apt-transport-https ca-certificates curl software-properties-common gnupg
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/docker.gpg
+echo "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt update
+sudo apt install -y docker-ce docker-ce-cli containerd.io
+sudo systemctl enable --now docker
+sudo usermod -aG docker ubuntu
 
 ```
 -คำสั่ง clone และเข้าไปยัง folder ของ repository
@@ -46,9 +57,13 @@ cd nextjsflaskapidocker
 ansible-playbook docker-install.yml
 
 ``` -->
--แก้ไข .env 
+-แก้ไข .env  แก้  TUNNEL_TOKEN ใส่ token ใน cloudflare
 ```
-nano .env
+nano .env 
+```
+-คำสั่งรัน
+```
+docker compose up -d --build
 ```
 Environment notes
 
